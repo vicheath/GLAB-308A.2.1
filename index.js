@@ -44,7 +44,6 @@ class Character {
   }
 
 
-
   class Adventurer extends Character {
     constructor(name, role) {
         super(name);
@@ -73,3 +72,13 @@ robin.companion.companion.inventory = ["small hat", "sunglasses"];
 robin.roll(); // Example: Robin rolled a 17.
 robin.companion.roll(); // Example: Leo rolled a 12.
 robin.companion.companion.roll(); // Example: Frank rolled a 19.
+
+// Testing static properties
+console.log(Character.MAX_HEALTH); // Example: 100
+console.log(Adventurer.ROLES); // Example: ["Fighter", "Healer", "Wizard"]
+
+// Creating Robin using the Adventurer class
+const robin = new Adventurer("Robin", "Fighter");
+
+// Testing the roll method for Robin
+robin.roll(); // Example: Robin rolled a 14.
