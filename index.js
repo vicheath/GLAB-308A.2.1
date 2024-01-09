@@ -42,3 +42,34 @@ class Character {
       this.inventory = [];
     }
   }
+
+
+
+  class Adventurer extends Character {
+    constructor(name, role) {
+        super(name);
+        this.role = role;
+        this.inventory.push("bedroll", "50 gold coins");
+    }
+
+    scout() {
+        console.log(`${this.name} is scouting ahead...`);
+        super.roll();
+    }
+}
+
+// Creating Robin using the Adventurer class
+const robin = new Adventurer("Robin", "Warrior");
+robin.inventory = ["sword", "potion", "artifact"];
+
+// Creating companions for Robin
+robin.companion = new Character("Leo");
+robin.companion.type = "Cat";
+robin.companion.companion = new Character("Frank");
+robin.companion.companion.type = "Flea";
+robin.companion.companion.inventory = ["small hat", "sunglasses"];
+
+// Testing the roll method for Robin and companions
+robin.roll(); // Example: Robin rolled a 17.
+robin.companion.roll(); // Example: Leo rolled a 12.
+robin.companion.companion.roll(); // Example: Frank rolled a 19.
